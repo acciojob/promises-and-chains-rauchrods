@@ -1,9 +1,10 @@
 //your JS code here. If required.
 let btnobj = document.querySelector("#btn");
-
+let ageobj = document.querySelector("#age");
+let nameobj = document.querySelector("#name");
 btnobj.addEventListener("click", execute);
 
-function execute(e) {
+function execute() {
  
     promisevar.then((result) => {
         alert(result);
@@ -17,8 +18,8 @@ function execute(e) {
 let promisevar = new Promise((resolve, reject) => {
 
     setTimeout(() => {
-        let ageval = document.querySelector("#age").value;
-        let name = document.querySelector("#name").value;
+        let ageval = ageobj.value;
+        let name = nameobj.value;
         if (ageval < 18) {
             reject(`Oh sorry ${name}. You aren't old enough.`);
         }
@@ -27,3 +28,4 @@ let promisevar = new Promise((resolve, reject) => {
         }
     }, 4000);
 });
+
